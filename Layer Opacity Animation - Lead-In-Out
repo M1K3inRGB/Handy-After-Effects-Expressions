@@ -1,0 +1,18 @@
+// Script added to the Opacity attribute of a layer
+
+// Duration of opacity animation (frames)
+n = 10 * thisComp.frameDuration;
+
+// Set maximum opacity
+maxOpacity = 100;
+
+// Set minimum opacity
+minOpacity = 0;
+
+if (time >= inPoint && time < outPoint-n){
+    linear(time,inPoint,(inPoint+n),minOpacity,maxOpacity)
+}else if (time >= outPoint-n){
+    linear(time,outPoint-n,outPoint,maxOpacity,minOpacity)
+}else{
+    value = maxOpacity;
+};
